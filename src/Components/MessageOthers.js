@@ -1,0 +1,23 @@
+import React from "react";
+import "./myStyle.css";
+
+function MessageOthers() {
+  const props1 = {
+    name: "RandomUser",
+    message: "This is a Sample",
+  };
+  return (
+    <div className="other-message-container">
+      <div className="conversation-container">
+        <p className="con-icon">{props1.name[0]}</p>
+        <div className="message other-text-context">
+          <p className="con-title"> {props1.name}</p>
+          <p className="con-lastMessage"> {props1.message}</p>
+          <p className="self-timeStamp"> 12:00am</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default MessageOthers;
