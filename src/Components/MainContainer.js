@@ -4,6 +4,8 @@ import Sidebar from "./SIdebar";
 import { useState } from "react";
 import Welcome from "./Welcome";
 import CreateGroups from "./CreateGroups";
+import UsersAndGroups from "./UsersAndGroups";
+import { Outlet } from "react-router-dom";
 
 function MainContainer() {
   const [conversations, setConversations] = useState([
@@ -26,9 +28,11 @@ function MainContainer() {
   return (
     <div className="main-container">
       <Sidebar props={conversations} />
+      <Outlet />
       {/* <ChatArea props={conversations[0]} /> */}
       {/* <Welcome /> */}
-      <CreateGroups />
+      {/* <CreateGroups /> */}
+      {/* <UsersAndGroups /> */}
     </div>
   );
 }

@@ -20,6 +20,7 @@
     margin: 5px;
     display: flex;
     justify-content: space-between;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
 }
 
 .sb-search {
@@ -29,6 +30,7 @@
     margin: 5px;
     display: flex;
     align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .search-box {
@@ -42,6 +44,7 @@
     border-radius: 20px;
     padding: 10px 10px;
     margin: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .conversations-container {
@@ -243,6 +246,7 @@ display: flex;
    background-color: wheat;
    display: flex;
    border-radius: 20px;
+   box-shadow: rgba(red, green, blue, alpha);
   }
 
   .image-container {
@@ -266,4 +270,54 @@ display: flex;
     gap: 15px;
     align-items: center;
     justify-content: center;
+  }
+
+  .list-container {
+    flex: 0.7;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ug-header {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    padding: 12px 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  .ug-list {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding: 10px;
+  }
+
+  .ug-list::-webkit-scrollbar {
+    display: none;
+
+  }
+
+  .list-item {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    margin:10px;
+    padding: 10px 5px;
+    align-items: center;
+    transition-duration: 0.5s;
+  }
+
+  .list-item:hover {
+    background-color: rgb(red, green, blue);
+  }
+
+  .list-item:active {
+    background-color: white;
   }

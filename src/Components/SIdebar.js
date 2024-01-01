@@ -9,8 +9,10 @@ import {
 } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import ConversationsItem from "./ConversationsItem";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar({ props }) {
+  const navigate = useNavigate();
   return (
     <div className="sidebar-container">
       <div className="sb-header">
@@ -21,7 +23,11 @@ function Sidebar({ props }) {
         </div>
 
         <div>
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigate("users");
+            }}
+          >
             <PersonAdd />
           </IconButton>
           <IconButton>

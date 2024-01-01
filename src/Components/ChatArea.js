@@ -6,8 +6,13 @@ import { Send } from "@mui/icons-material";
 import MessageOthers from "./MessageOthers";
 import MessageSelf from "./MessageSelf";
 
-function ChatArea({ props }) {
-  console.log("props ", props.name[0]);
+function ChatArea() {
+  const props = {
+    name: "Test1",
+    lastMessage: "Last Message 1",
+    timeStamp: "Today",
+  };
+
   return (
     <div className="chatArea-container">
       <div className="chatArea-header">
