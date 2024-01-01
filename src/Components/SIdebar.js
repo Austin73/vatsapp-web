@@ -10,9 +10,27 @@ import {
 import { IconButton } from "@mui/material";
 import ConversationsItem from "./ConversationsItem";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function Sidebar({ props }) {
+function Sidebar() {
   const navigate = useNavigate();
+  const [conversations, setConversations] = useState([
+    {
+      name: "Test1",
+      lastMessage: "Last Message 1",
+      timeStamp: "Today",
+    },
+    {
+      name: "Test2",
+      lastMessage: "Last Message 2",
+      timeStamp: "Today",
+    },
+    {
+      name: "Test3",
+      lastMessage: "Last Message 3",
+      timeStamp: "Today",
+    },
+  ]);
   return (
     <div className="sidebar-container">
       <div className="sb-header">
@@ -30,10 +48,18 @@ function Sidebar({ props }) {
           >
             <PersonAdd />
           </IconButton>
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigate("groups");
+            }}
+          >
             <GroupAdd />
           </IconButton>
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigate("create-groups");
+            }}
+          >
             <AddCircle />
           </IconButton>
           <IconButton>
@@ -50,9 +76,12 @@ function Sidebar({ props }) {
         <input placeholder="Search" className="search-box" />
       </div>
       <div className="sb-conversations">
-        {props.map((conversation) => {
+        {conversations.map((conversation) => {
           return (
-            <ConversationsItem props={conversation} key={conversation.name} />
+            <ConversationsItem
+              conversations={conversation}
+              key={conversation.name}
+            />
           );
         })}
       </div>

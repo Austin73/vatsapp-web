@@ -55,6 +55,17 @@
     padding: 5px;
     margin: 5px;
     border-radius: 20px;
+    transition-duration: 0.5s;
+}
+
+.conversations-container:hover 
+{
+  background-color: lightcyan;
+}
+
+.conversations-container:active 
+{
+  background-color: white;
 }
 
 .con-icon {
@@ -314,10 +325,15 @@ display: flex;
     transition-duration: 0.5s;
   }
 
-  .list-item:hover {
+  .list-item:hover 
+  {
     background-color: rgb(red, green, blue);
   }
 
   .list-item:active {
-    background-color: white;
+    background-color: lightgray;
+  }
+
+  .user-container {
+    flex:0.7
   }

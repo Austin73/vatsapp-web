@@ -3,7 +3,7 @@ import UsersAndGroups from "./UsersAndGroups";
 
 function User() {
   return (
-    <div>
+    <div className="user-container">
       <UsersAndGroups />
     </div>
   );

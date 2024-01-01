@@ -27,9 +27,9 @@ function MainContainer() {
   ]);
   return (
     <div className="main-container">
-      <Sidebar props={conversations} />
+      <Sidebar />
       <Outlet />
-      {/* <ChatArea props={conversations[0]} /> */}
+
       {/* <Welcome /> */}
       {/* <CreateGroups /> */}
       {/* <UsersAndGroups /> */}
