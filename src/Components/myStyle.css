@@ -337,3 +337,14 @@ display: flex;
   .user-container {
     flex:0.7
   }
+
+  .dark 
+  {
+    background-color: #2D3941!important;
+  }
+
+  .icon 
+  {
+    width: 1.25em !important;
+    height: 1.25 !important;
+  }

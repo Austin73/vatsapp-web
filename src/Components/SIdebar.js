@@ -6,6 +6,7 @@ import {
   GroupAdd,
   Nightlight,
   Search,
+  LightMode,
 } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import ConversationsItem from "./ConversationsItem";
@@ -14,6 +15,7 @@ import { useState } from "react";
 
 function Sidebar() {
   const navigate = useNavigate();
+  const [lightTheme, setLightTheme] = useState(true);
   const [conversations, setConversations] = useState([
     {
       name: "Test1",
@@ -33,10 +35,10 @@ function Sidebar() {
   ]);
   return (
     <div className="sidebar-container">
-      <div className="sb-header">
+      <div className={"sb-header" + (lightTheme ? "" : "  dark")}>
         <div>
           <IconButton>
-            <AccountCircle />
+            <AccountCircle className={"icon" + (lightTheme ? "" : "  dark")} />
           </IconButton>
         </div>
 
@@ -60,10 +62,17 @@ function Sidebar() {
               navigate("create-groups");
             }}
           >
-            <AddCircle />
+            <AddCircle className={"icon" + (lightTheme ? "" : "  dark")} />
           </IconButton>
-          <IconButton>
-            <Nightlight />
+          <IconButton
+            onClick={() => {
+              setLightTheme((prevValue) => {
+                return !prevValue;
+              });
+            }}
+          >
+            {lightTheme && <Nightlight />}
+            {!lightTheme && <LightMode />}
           </IconButton>
         </div>
       </div>
