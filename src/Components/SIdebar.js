@@ -12,10 +12,14 @@ import { IconButton } from "@mui/material";
 import ConversationsItem from "./ConversationsItem";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleTheme } from "../Features/themeSlice";
 
 function Sidebar() {
   const navigate = useNavigate();
-  const [lightTheme, setLightTheme] = useState(true);
+
+  const lightTheme = useSelector((state) => state.theme.value);
+  const dispatch = useDispatch();
   const [conversations, setConversations] = useState([
     {
       name: "Test1",
@@ -64,13 +68,7 @@ function Sidebar() {
           >
             <AddCircle className={"icon" + (lightTheme ? "" : "  dark")} />
           </IconButton>
-          <IconButton
-            onClick={() => {
-              setLightTheme((prevValue) => {
-                return !prevValue;
-              });
-            }}
-          >
+          <IconButton onClick={() => dispatch(toggleTheme())}>
             {lightTheme && <Nightlight />}
             {!lightTheme && <LightMode />}
           </IconButton>
